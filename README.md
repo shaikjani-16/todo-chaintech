@@ -32,4 +32,5 @@ cd frontend
 npm i
 cd backend
 npm i 
-Update .env file by using .env.sample
+Update .env file by using .env.sample (backend)
+Replace fetch url in frontend according to backend link
