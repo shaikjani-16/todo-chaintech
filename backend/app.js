@@ -6,6 +6,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 const app = express();
+
+// Middleware
 app.use(cors());
 app.use(express.json());
 
@@ -21,9 +23,10 @@ mongoose
 // Routes
 app.use("/api/tasks", taskRoutes);
 
-const PORT = 5000;
+// Default Route
 app.get("/", (req, res) => {
-  res.send("Hello from server");
+  res.send("Hello from the server!");
 });
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-module.exports = app;
+
+// Export app for Vercel
+export default app; // <-- Use `export default` instead of `module.exports`
