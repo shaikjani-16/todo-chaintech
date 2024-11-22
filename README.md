@@ -27,5 +27,9 @@ A simple To-Do List app using **React** (Frontend) and **Express** (Backend) wit
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/yourusername/todo-list-app.git
-cd todo-list-app
+git clone https://github.com/shaikjani-16/todo-chaintech
+cd frontend
+npm i
+cd backend
+npm i 
+Update .env file by using .env.sample
