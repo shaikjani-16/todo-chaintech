@@ -12,13 +12,28 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Connection
-mongoose
-  .connect(process.env.DATABASE_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.error("Error connecting to MongoDB:", err));
+import mongoose from "mongoose";
+
+let isConnected = false; // Track the database connection state
+
+const connectDB = async () => {
+  if (isConnected) {
+    return; // Use existing connection
+  }
+  try {
+    const db = await mongoose.connect(process.env.DATABASE_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    isConnected = db.connections[0].readyState === 1; // Connection successful
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.error("Error connecting to MongoDB:", error);
+    throw error;
+  }
+};
+
+connectDB();
 
 // Routes
 app.use("/api/tasks", taskRoutes);
@@ -28,5 +43,4 @@ app.get("/", (req, res) => {
   res.send("Hello from the server!");
 });
 
-// Export app for Vercel
-export default app; // <-- Use `export default` instead of `module.exports`
+export default app;
