@@ -4,9 +4,9 @@ A simple To-Do List app using **React** (Frontend) and **Express** (Backend) wit
 
 ## Features:
 - **Create Tasks**: Add tasks with title, description, due date, and category.
-- **Edit Tasks**: Update task details.
-- **Delete Tasks**: Remove tasks from the list.
-- **Categorize Tasks**: Choose between categories like **Work**, **Personal**, **Low**, **Medium**, and **Urgent**.
+- **Edit Tasks** ![alt text](image-2.png): Update task details.
+- **Delete Tasks**![alt text](image-1.png): Remove tasks from the list.
+- **Categorize Tasks**![alt text](image-3.png): Choose between categories like **Work**, **Personal**, **Low**, **Medium**, and **Urgent**.
 - **Task Status**: Mark tasks as **Completed** or **Pending**.
 - **Filter Tasks**: Filter tasks by category.
 
@@ -33,4 +33,4 @@ npm i
 cd backend
 npm i 
 Update .env file by using .env.sample (backend)
-Replace fetch url in frontend according to backend link
+Replace fetch url in frontend according to backend deployed link
